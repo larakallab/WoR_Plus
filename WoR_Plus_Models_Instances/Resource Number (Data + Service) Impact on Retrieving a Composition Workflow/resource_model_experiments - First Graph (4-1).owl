@@ -1,0 +1,1727 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/eirbouh/ontologies/2021/5/untitled-ontology-5#"
+     xml:base="http://www.semanticweb.org/eirbouh/ontologies/2021/5/untitled-ontology-5"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:hssn="http://spider.sigappfr.org/HSSNdoc/hssn.ttl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:gradys="http://www.semanticweb.org/ontologies/2021/5/gradys#"
+     xmlns:schema="http://schema.org/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys">
+        <owl:imports rdf:resource="http://spider.sigappfr.org/HSSNdoc/hssn.ttl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Expected_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Expected_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Expects"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Expects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Expects">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Operation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Exposed_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Exposed_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Exposes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Exposes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Exposes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Environment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Follows -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Follows">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Component -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Component">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Workflow"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Configform -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Configform">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#VisualComponent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Configform"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Has_MainCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_MainCategory">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Has_OtherCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_OtherCategory">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Param -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Param">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Has_ParamConfig -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_ParamConfig">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Position -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Position">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#VisualComponent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Position"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Has_QoR -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_QoR">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#QoR"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Has_VisualComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_VisualComponent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Workflow -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Workflow">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#CompositeResource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Workflow"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Has_some -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_some">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#CompositeResource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Included_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Included_in">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Includes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Includes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Includes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Configform"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Is_Linked_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Is_Linked_to">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Is_Related_To -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Is_Related_To">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Is_parallel_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Is_parallel_to">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Offered_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Offered_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Offers"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Offers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Offers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Operation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Precedes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Precedes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Represented_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Represented_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Represents"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Represents -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Represents">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Returned_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Returned_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Returns"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Returns -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Returns">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Operation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Same_As -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Same_As">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Similar_To -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Similar_To">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Virtualizes_CR -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Virtualizes_CR">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#VirtualResource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#CompositeResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Virtualizes_ER -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Virtualizes_ER">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#VirtualResource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#ElementaryResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#actsOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#actsOn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Action"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#hasContent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#hasContent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Content"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#hasContentMetaData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#hasContentMetaData"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#hasInCommun -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#hasInCommun">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#hasMetaData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#hasMetaData">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdfs:range rdf:resource="http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Metadata"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#hasSubject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#hasSubject">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Content"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Contentsubject"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#hasType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#hasType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#CompositeResource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#ElementaryResource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#VirtualResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#isAggregatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#isAggregatedWith">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#isComplementaryTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#isComplementaryTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#isSimilarTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#isSimilarTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#producesAction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#producesAction">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Category_color -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Category_color">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Category"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Category_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Category_id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Category"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Category_value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Category_value">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Category"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Config_ex -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Config_ex">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Operation"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Config_ex"/>
+                        <owl:hasValue>Corps JSON</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Config_ex"/>
+                        <owl:hasValue>Parametre URL</owl:hasValue>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Contentsubject -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Contentsubject">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#DataContentType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#DataContentType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Description">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Function -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Function">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Operation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Image_file_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Image_file_name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#VisualComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Input_connector -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Input_connector">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#VisualComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Location_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Location_id">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Metadatatext -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Metadatatext">
+        <rdfs:domain rdf:resource="http://spider.sigappfr.org/HSSNdoc/hssn.ttl#TextualDescription"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Method -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Method">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Operation"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Method"/>
+                        <owl:hasValue>Delete</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Method"/>
+                        <owl:hasValue>Get</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Method"/>
+                        <owl:hasValue>Post</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Method"/>
+                        <owl:hasValue>Put</owl:hasValue>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#VisualComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Nature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Nature">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Output_connector -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Output_connector">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#VisualComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Output_label -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Output_label">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#VisualComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Param_datatype -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Param_datatype">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Param_defaultvalue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Param_defaultvalue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Param_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Param_id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Param_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Param_name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Platform_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Platform_id">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Platform_value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Platform_value">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Position_X -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Position_X">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Position"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Position_Y -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Position_Y">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Position"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#QoR_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#QoR_name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#QoD"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#QoR"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#QoS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#QoR_value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#QoR_value">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#QoD"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#QoR"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#QoS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Source -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Source">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Title">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#TypeOfData -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#TypeOfData">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Uri -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Uri">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Operation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Location -->
+
+    <rdf:Description rdf:about="http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Location">
+        <rdfs:comment>Locations are the essential component of a Location Map. Each location can be viewed as a set of points in space that form a random or geometrical shape.</rdfs:comment>
+        <rdfs:label>Location</rdfs:label>
+        <skos:definition>Locations are the essential component of a Location Map. Each location can be viewed as a set of points in space that form a random or geometrical shape.</skos:definition>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Action -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Action"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#ApplicationQuality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#ApplicationQuality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#QoS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Category -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Category"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Characteristic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Characteristic"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Is_parallel_to"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Precedes"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_VisualComponent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#VisualComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Represents"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#CompositeResource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#CompositeResource">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_some"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Workflow"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Workflow"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Configform -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Configform">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#VisualComponent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Includes"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Content -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Content"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Data -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Data">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#hasContent"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Content"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#ElementaryResource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#ElementaryResource"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Environment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Environment">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Exposes"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#NetworkQuality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#NetworkQuality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#QoS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Operation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Operation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Expects"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Offered_by"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Returns"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Expected_by"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Operation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Included_in"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Configform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Returned_by"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Operation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#PhyiscalQuality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#PhyiscalQuality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#QoS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Position -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Position"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#QoD -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#QoD">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#QoR"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#QoR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#QoR"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#QoS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#QoS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#QoR"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Resource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_MainCategory"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Category"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_OtherCategory"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Category"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Param"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_ParamConfig"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Parameter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_QoR"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#QoR"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Offers"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Operation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Represented_by"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Exposed_by"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Environment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_VisualComponent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#VisualComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Represented_by"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Service">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#producesAction"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Action"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#VirtualResource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#VirtualResource">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Virtualizes_CR"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#CompositeResource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Virtualizes_ER"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#ElementaryResource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#VisualComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#VisualComponent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Position"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Position"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Configform"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Configform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Workflow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Workflow">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Has_Component"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Resource -->
+
+    <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource">
+        <rdfs:comment>The class resource, everything.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+        <rdfs:label>Resource</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Cat1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Cat1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Category"/>
+        <gradys:Category_color>blue</gradys:Category_color>
+        <gradys:Category_id>Cat_01</gradys:Category_id>
+        <gradys:Category_value>Collecte de données</gradys:Category_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Cat2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Cat2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Category"/>
+        <gradys:Category_color>yellow</gradys:Category_color>
+        <gradys:Category_id>Cat_02</gradys:Category_id>
+        <gradys:Category_value>Prétraitement de données</gradys:Category_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Cat3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Cat3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Category"/>
+        <gradys:Category_color>Green</gradys:Category_color>
+        <gradys:Category_id>Cat_03</gradys:Category_id>
+        <gradys:Category_value>Traitement avancé de données</gradys:Category_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component11 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component11">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component12 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component12">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component13 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component13">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component14 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component14">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component15 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component15">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component16 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component16">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component17 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component17">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component18 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component18">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component19 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component19">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component20 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component20">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component8">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Component9 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Component9">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component"/>
+        <gradys:Represents rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Data1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Data1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <gradys:Id>Res_1</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Data10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Data10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <gradys:Id>Res_10</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Data2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Data2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <gradys:Id>Res_2</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Data3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Data3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <gradys:Id>Res_3</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Data4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Data4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <gradys:Id>Res_4</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Data5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Data5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <gradys:Id>Res_5</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Data6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Data6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <gradys:Id>Res_6</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Data7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Data7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <gradys:Id>Res_7</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Data8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Data8">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <gradys:Id>Res_8</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Data9 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Data9">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Data"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <gradys:Id>Res_9</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Device1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Device1">
+        <rdf:type rdf:resource="http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Device"/>
+        <hssn:currentlyLocatedAt rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Location1"/>
+        <gradys:Platform_id>Dev_01</gradys:Platform_id>
+        <gradys:Platform_value>Device 1</gradys:Platform_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Device2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Device2">
+        <rdf:type rdf:resource="http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Device"/>
+        <hssn:currentlyLocatedAt rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Location1"/>
+        <gradys:Platform_id>Dev_02</gradys:Platform_id>
+        <gradys:Platform_value>Device 2</gradys:Platform_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Device3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Device3">
+        <rdf:type rdf:resource="http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Device"/>
+        <hssn:currentlyLocatedAt rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Location1"/>
+        <gradys:Platform_id>Dev_03</gradys:Platform_id>
+        <gradys:Platform_value>Device 3</gradys:Platform_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Location1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Location1">
+        <rdf:type rdf:resource="http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Location"/>
+        <hssn:currentlyLocates rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Device1"/>
+        <gradys:Location_id>Zone 1</gradys:Location_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Metadata2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Metadata2">
+        <rdf:type rdf:resource="http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Metadata"/>
+        <rdf:type rdf:resource="http://spider.sigappfr.org/HSSNdoc/hssn.ttl#TextualDescription"/>
+        <gradys:Metadatatext>Weather</gradys:Metadatatext>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Platform1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Platform1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Environment"/>
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <gradys:Platform_id>Plat_01</gradys:Platform_id>
+        <gradys:Platform_value>Platform 1</gradys:Platform_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Platform2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Platform2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Environment"/>
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <gradys:Platform_id>Plat_02</gradys:Platform_id>
+        <gradys:Platform_value>Platform 2</gradys:Platform_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Platform3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Platform3">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <gradys:Platform_id>Plat_03</gradys:Platform_id>
+        <gradys:Platform_value>Platform 3</gradys:Platform_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#ResComp1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#ResComp1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <gradys:Has_Workflow rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Workflow1"/>
+        <gradys:hasType rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#compositeResourcetype1"/>
+        <gradys:Id>ResComp_1</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Service1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Service1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <gradys:Id>Res_11</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Service10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Service10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <gradys:Id>Res_20</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Service2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Service2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <gradys:Id>Res_12</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Service3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Service3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <gradys:Id>Res_13</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Service4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Service4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <gradys:Id>Res_14</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Service5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Service5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <gradys:Id>Res_15</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Service6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Service6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <gradys:Id>Res_16</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Service7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Service7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <gradys:Id>Res_17</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Service8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Service8">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <gradys:Id>Res_18</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Service9 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Service9">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Service"/>
+        <gradys:Id>Res_19</gradys:Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Workflow1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Workflow1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Workflow"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component1"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component10"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component11"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component12"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component13"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component14"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component15"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component16"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component17"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component18"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component19"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component2"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component20"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component3"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component4"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component5"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component6"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component7"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component8"/>
+        <gradys:Has_Component rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Component9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#compositeResourcetype1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#compositeResourcetype1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#CompositeResource"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
