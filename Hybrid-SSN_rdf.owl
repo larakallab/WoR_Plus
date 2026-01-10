@@ -1,0 +1,3638 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY ssn "http://www.w3.org/ns/ssn/" >
+    <!ENTITY terms "http://purl.org/dc/terms/" >
+    <!ENTITY sosa "http://www.w3.org/ns/sosa/" >
+    <!ENTITY vann "http://purl.org/vocab/vann/" >
+    <!ENTITY mssn "http://mssn.sigappfr.org/mssn#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY hssn "http://spider.sigappfr.org/HSSNdoc/hssn.ttl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:hssn="http://spider.sigappfr.org/HSSNdoc/hssn.ttl#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:ssn="http://www.w3.org/ns/ssn/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:mssn="http://mssn.sigappfr.org/mssn#">
+    <Ontology rdf:about="http://spider.sigappfr.org/HSSNdoc/hssn.ttl">
+        <imports rdf:resource="http://www.w3.org/ns/ssn/"/>
+        <imports rdf:resource="&ssn;systems/"/>
+    </Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#note -->
+
+    <AnnotationProperty rdf:about="&skos;note"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#above -->
+
+    <ObjectProperty rdf:about="&mssn;above">
+        <rdfs:label>isAbove</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&mssn;directionalRelation"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#below -->
+
+    <ObjectProperty rdf:about="&mssn;below">
+        <rdfs:label>isBelow</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&mssn;directionalRelation"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#closeTo -->
+
+    <ObjectProperty rdf:about="&mssn;closeTo">
+        <rdfs:label>isCloseTo</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&mssn;distanceRelation"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#contains -->
+
+    <ObjectProperty rdf:about="&mssn;contains">
+        <rdfs:label>contains</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&mssn;topologicalRelation"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#covers -->
+
+    <ObjectProperty rdf:about="&mssn;covers">
+        <rdfs:label>covers</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&mssn;topologicalRelation"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#crosses -->
+
+    <ObjectProperty rdf:about="&mssn;crosses">
+        <rdfs:label>crosses</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&mssn;topologicalRelation"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#directionalRelation -->
+
+    <ObjectProperty rdf:about="&mssn;directionalRelation">
+        <rdfs:label>hasDirectionalLocation</rdfs:label>
+        <vann:preferredNamespaceUri>An abstract relation for directional location relations</vann:preferredNamespaceUri>
+        <rdfs:subPropertyOf rdf:resource="&mssn;locationRelation"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#disjoint -->
+
+    <ObjectProperty rdf:about="&mssn;disjoint">
+        <rdfs:label>isDisjointWith</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&mssn;topologicalRelation"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#distanceRelation -->
+
+    <ObjectProperty rdf:about="&mssn;distanceRelation">
+        <rdfs:label>hasDistanceRelation</rdfs:label>
+        <vann:preferredNamespaceUri>An abstract relation for distance relations</vann:preferredNamespaceUri>
+        <rdfs:subPropertyOf rdf:resource="&mssn;locationRelation"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#equals -->
+
+    <ObjectProperty rdf:about="&mssn;equals">
+        <rdfs:label>equals</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&mssn;topologicalRelation"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#farFrom -->
+
+    <ObjectProperty rdf:about="&mssn;farFrom">
+        <rdfs:label>isFarFrom</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&mssn;distanceRelation"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#hasMediaDescriptor -->
+
+    <ObjectProperty rdf:about="&mssn;hasMediaDescriptor">
+        <rdfs:label>hasMultimediaDescriptor</rdfs:label>
+        <rdfs:comment>A relation between a media segment and a media descriptor</rdfs:comment>
+        <rdfs:range rdf:resource="&mssn;MediaDescriptor"/>
+        <rdfs:domain rdf:resource="&mssn;MultimediaData"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#hasMediaSegment -->
+
+    <ObjectProperty rdf:about="&mssn;hasMediaSegment">
+        <rdfs:label>hasMediaSegment</rdfs:label>
+        <rdfs:comment>A relation between MultimediaData and MediaSegment concept</rdfs:comment>
+        <rdfs:domain rdf:resource="&mssn;MediaDescriptor"/>
+        <rdfs:range rdf:resource="&mssn;MultimediaData"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#leftOf -->
+
+    <ObjectProperty rdf:about="&mssn;leftOf">
+        <rdfs:label>isLeftOf</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&mssn;directionalRelation"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#locationRelation -->
+
+    <ObjectProperty rdf:about="&mssn;locationRelation">
+        <rdfs:label>hasLocationRelation</rdfs:label>
+        <rdfs:comment>A location relation describes a relation between a pair of locations e.g. &quot;Table1&quot; opposite &quot;Table2&quot;.   
+
+A location relation can be either topological relation, directional relation or distance relation.
+
+This relation intends to be use as an abstract relation for other location relations.   Hence, it may not be used directly.    Only sub-relations of this relation should be used</rdfs:comment>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#opposite -->
+
+    <ObjectProperty rdf:about="&mssn;opposite">
+        <rdfs:label>isOppositeOf</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&mssn;directionalRelation"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#overlaps -->
+
+    <ObjectProperty rdf:about="&mssn;overlaps">
+        <rdfs:label>overlaps</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&mssn;topologicalRelation"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#rightOf -->
+
+    <ObjectProperty rdf:about="&mssn;rightOf">
+        <rdfs:label>isRightOf</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&mssn;directionalRelation"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#topologicalRelation -->
+
+    <ObjectProperty rdf:about="&mssn;topologicalRelation">
+        <rdfs:label>hasTopologicalRelation</rdfs:label>
+        <vann:preferredNamespaceUri>An abstract relation for topological location relations</vann:preferredNamespaceUri>
+        <rdfs:subPropertyOf rdf:resource="&mssn;locationRelation"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#touches -->
+
+    <ObjectProperty rdf:about="&mssn;touches">
+        <rdfs:label>touches</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&mssn;topologicalRelation"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#affectedBy -->
+
+    <ObjectProperty rdf:about="&hssn;affectedBy">
+        <rdfs:label>affectedBy</rdfs:label>
+        <skos:definition>Relation that maps a Visualisation to a Context</skos:definition>
+        <rdfs:range rdf:resource="&hssn;Context"/>
+        <rdfs:domain rdf:resource="&hssn;Visualisation"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#affects -->
+
+    <ObjectProperty rdf:about="&hssn;affects">
+        <rdfs:label>affects</rdfs:label>
+        <skos:definition>Relation that maps a Context to a Visualisation choice</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;Context"/>
+        <rdfs:range rdf:resource="&hssn;Visualisation"/>
+        <inverseOf rdf:resource="&hssn;affectedBy"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#atCoverageTime -->
+
+    <ObjectProperty rdf:about="&hssn;atCoverageTime">
+        <rdfs:label>hasCoverageTime</rdfs:label>
+        <skos:definition>Relation that maps a CoverageArea covered by a Sensor to a time:TemporalEntity.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;CoverageArea"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#atLocationTime -->
+
+    <ObjectProperty rdf:about="&hssn;atLocationTime">
+        <rdfs:label>hasLocationTime</rdfs:label>
+        <skos:definition>Relation that maps a Location of a Sensor to a time:TemporalEntity.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#atSensingTime -->
+
+    <ObjectProperty rdf:about="&hssn;atSensingTime">
+        <rdfs:label>hasSensingTime</rdfs:label>
+        <rdfs:comment>Denotes the sensing timestamp for a specific Observation Value</rdfs:comment>
+        <rdfs:domain rdf:resource="&hssn;ObservationValue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#centeredAround -->
+
+    <ObjectProperty rdf:about="&hssn;centeredAround">
+        <rdfs:label>isCenteredAround</rdfs:label>
+        <skos:definition>Relation that maps a Sensor&apos;s Location to its CoverageArea.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;CoverageArea"/>
+        <rdfs:range rdf:resource="&hssn;SensingLocation"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#centers -->
+
+    <ObjectProperty rdf:about="&hssn;centers">
+        <rdfs:label>centers</rdfs:label>
+        <skos:definition>Relation that maps a CoverageArea to its Sensor&apos;s Location.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;CoverageArea"/>
+        <rdfs:domain rdf:resource="&hssn;SensingLocation"/>
+        <inverseOf rdf:resource="&hssn;centeredAround"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#composedOf -->
+
+    <ObjectProperty rdf:about="&hssn;composedOf">
+        <rdfs:label>isComposedOf</rdfs:label>
+        <skos:definition>The relation between a LocationMap and the set of individual Locations that compose it.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+        <rdfs:domain rdf:resource="&hssn;LocationMap"/>
+        <inverseOf rdf:resource="&hssn;composes"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#composes -->
+
+    <ObjectProperty rdf:about="&hssn;composes">
+        <rdfs:label>composes</rdfs:label>
+        <skos:definition>The relation between the set of individual Locations that compose a LocationMap.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+        <rdfs:range rdf:resource="&hssn;LocationMap"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#currentlyCoveredBy -->
+
+    <ObjectProperty rdf:about="&hssn;currentlyCoveredBy">
+        <rdfs:label>isCurrentlyCoveredBy</rdfs:label>
+        <rdfs:comment>The inverse of currentlyCoversA</rdfs:comment>
+        <skos:definition>The inverse of currentlyCoversA</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;CoverageArea"/>
+        <inverseOf rdf:resource="&hssn;currentlyCoversA"/>
+        <rdfs:range rdf:resource="&sosa;Sensor"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#currentlyCoversA -->
+
+    <ObjectProperty rdf:about="&hssn;currentlyCoversA">
+        <rdfs:label>currentlyCovers</rdfs:label>
+        <skos:definition>currentlyCoversA is the object property that allows finding the Coverage Area of a Stationary or Mobile Sensor in time. The Coverage Area of a Stationary Sensor does not vary in time, this is not the case for a Mobile Sensor. At a point t in time, a Stationary or Mobile Sensor can have exactly one Coverage Area.</skos:definition>
+        <rdfs:comment>currentlyCoversA is the object property that allows finding the Coverage Area of a Stationary or Mobile Sensor in time. The Coverage Area of a Stationary Sensor does not change in time, this is not the case for a Mobile Sensor. At a point t in time, a Stationary or Mobile Sensor can have exactly one Coverage Area.</rdfs:comment>
+        <rdfs:range rdf:resource="&hssn;CoverageArea"/>
+        <rdfs:domain rdf:resource="&sosa;Sensor"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#currentlyLocatedAt -->
+
+    <ObjectProperty rdf:about="&hssn;currentlyLocatedAt">
+        <rdfs:label>isCurrentlyLocatedAt</rdfs:label>
+        <skos:definition>currentlyLocatedAt is the object property that allows to localize a Stationary or Mobile Sensor in time. The  Location value for a Stationary Sensor does not change in time, this is not the case for a Mobile Sensor. At a point t in time, a Stationary or Mobile Sensor can have exactly one Location.</skos:definition>
+        <rdfs:comment>curentlyLocatedAt is the object property that allows to localize a Stationary or Mobile Sensor in time. The Location value for a Stationary Sensor does not change in time, this is not the case for a Moble Sensor. At a point t in time, a Stationary or Mobile Sensor can have exactly one Location.</rdfs:comment>
+        <rdfs:domain rdf:resource="&hssn;Device"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+        <inverseOf rdf:resource="&hssn;currentlyLocates"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#currentlyLocates -->
+
+    <ObjectProperty rdf:about="&hssn;currentlyLocates">
+        <rdfs:label>currentlyLocates</rdfs:label>
+        <rdfs:comment>The inverse of currentlyLocatedAt</rdfs:comment>
+        <skos:definition>The inverse of currentlyLocatedAt</skos:definition>
+        <rdfs:range rdf:resource="&hssn;Device"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#delimitedBy -->
+
+    <ObjectProperty rdf:about="&hssn;delimitedBy">
+        <rdfs:label>isDelimitedBy</rdfs:label>
+        <skos:definition>Defines the relation between CoverageArea and the sensor&apos;s SensingRange.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;CoverageArea"/>
+        <rdfs:range rdf:resource="&hssn;SensingRange"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#delimits -->
+
+    <ObjectProperty rdf:about="&hssn;delimits">
+        <rdfs:label>delimits</rdfs:label>
+        <skos:definition>Defines the impact of the sensor&apos;s SensingRange on the geomerty of the CoverageArea.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;CoverageArea"/>
+        <rdfs:domain rdf:resource="&hssn;SensingRange"/>
+        <inverseOf rdf:resource="&hssn;delimitedBy"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#describes -->
+
+    <ObjectProperty rdf:about="&hssn;describes">
+        <rdfs:label>describes</rdfs:label>
+        <skos:definition>The relation between a LocationMap and an Infrastructure helps represent the spatial elements of the latter.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;Infrastructure"/>
+        <rdfs:domain rdf:resource="&hssn;LocationMap"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#embeddedOn -->
+
+    <ObjectProperty rdf:about="&hssn;embeddedOn">
+        <rdfs:label>isEmbeddedOn</rdfs:label>
+        <skos:definition>The relation helps discover the Systems deployed or embedded on a Device&apos;s ExpansionCard.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;ExpansionCard"/>
+        <inverseOf rdf:resource="&hssn;hasEmbeddedSystem"/>
+        <rdfs:domain rdf:resource="&ssn;System"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasCapability -->
+
+    <ObjectProperty rdf:about="&hssn;hasCapability">
+        <rdfs:label>hasCapability</rdfs:label>
+        <skos:definition>This relation maps a Service to its Capability description.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;Capability"/>
+        <rdfs:domain rdf:resource="&hssn;Service"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasComUnit -->
+
+    <ObjectProperty rdf:about="&hssn;hasComUnit">
+        <rdfs:label>hasNetworkInterface</rdfs:label>
+        <skos:definition>This relation maps the Hardware of a Device to its NetworkInterface.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;Hardware"/>
+        <rdfs:range rdf:resource="&hssn;NetworkInterface"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasCommunicationRange -->
+
+    <ObjectProperty rdf:about="&hssn;hasCommunicationRange">
+        <rdfs:range rdf:resource="&hssn;CommunicationRange"/>
+        <rdfs:domain rdf:resource="&hssn;NetworkInterface"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasContext -->
+
+    <ObjectProperty rdf:about="&hssn;hasContext">
+        <rdfs:label>hasCurrentContext</rdfs:label>
+        <skos:definition>Relation that maps a Thing to its current Context</skos:definition>
+        <rdfs:range rdf:resource="&hssn;Context"/>
+        <rdfs:domain rdf:resource="&owl;Thing"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasDeployUnit -->
+
+    <ObjectProperty rdf:about="&hssn;hasDeployUnit">
+        <rdfs:label>hasExpansionCard</rdfs:label>
+        <skos:definition>This relation maps the Hardware of a Device to its ExpansionCard.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;ExpansionCard"/>
+        <rdfs:domain rdf:resource="&hssn;Hardware"/>
+        <inverseOf rdf:resource="&hssn;unitDeployedOn"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasEmbeddedSystem -->
+
+    <ObjectProperty rdf:about="&hssn;hasEmbeddedSystem">
+        <rdfs:label>hasEmbeddedSystem</rdfs:label>
+        <skos:definition>This relation maps Systems to ExpansionCards where they are embedded or deployed.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;ExpansionCard"/>
+        <rdfs:range rdf:resource="&ssn;System"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasHardware -->
+
+    <ObjectProperty rdf:about="&hssn;hasHardware">
+        <rdfs:label>hasHardware</rdfs:label>
+        <skos:definition>This relation maps a Device to its Hardware.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;Device"/>
+        <rdfs:range rdf:resource="&hssn;Hardware"/>
+        <inverseOf rdf:resource="&hssn;relatedToDevice"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasInterfaces -->
+
+    <ObjectProperty rdf:about="&hssn;hasInterfaces">
+        <rdfs:label>hasInterfaces</rdfs:label>
+        <skos:definition>This relation maps a Service to its Interfaces.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;Interface"/>
+        <rdfs:domain rdf:resource="&hssn;Service"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasMetadata -->
+
+    <ObjectProperty rdf:about="&hssn;hasMetadata">
+        <rdfs:label>hasMetadata</rdfs:label>
+        <skos:definition>This relation maps a Thing to its Metadata descriptors.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;Metadata"/>
+        <rdfs:domain rdf:resource="&owl;Thing"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasPastCoverageArea -->
+
+    <ObjectProperty rdf:about="&hssn;hasPastCoverageArea">
+        <rdfs:label>hasPastCoverageArea</rdfs:label>
+        <skos:definition>This relation maps MobileSensors to their previous CoverageAreas.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;CoverageArea"/>
+        <inverseOf rdf:resource="&hssn;previouslyCoveredBy"/>
+        <rdfs:domain rdf:resource="&sosa;Sensor"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasPastLocation -->
+
+    <ObjectProperty rdf:about="&hssn;hasPastLocation">
+        <rdfs:label>hasPastLocation</rdfs:label>
+        <skos:definition>Maps each sensor to his past Locations</skos:definition>
+        <rdfs:comment>This allows the tracking of mobile sensors</rdfs:comment>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+        <rdfs:domain rdf:resource="&hssn;MobileDevice"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasPowerUnit -->
+
+    <ObjectProperty rdf:about="&hssn;hasPowerUnit">
+        <rdfs:label>hasPowerSupply</rdfs:label>
+        <skos:definition>This relation maps the Hardware of a Device to its PowerSupply.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;Hardware"/>
+        <rdfs:range rdf:resource="&hssn;PowerSupply"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasPreviousCiontext -->
+
+    <ObjectProperty rdf:about="&hssn;hasPreviousCiontext">
+        <rdfs:label>hasPreviousContext</rdfs:label>
+        <skos:definition>Relation that maps a Thing to a set of previous Contexts</skos:definition>
+        <rdfs:range rdf:resource="&hssn;Context"/>
+        <rdfs:domain rdf:resource="&owl;Thing"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasPreviousVisualisation -->
+
+    <ObjectProperty rdf:about="&hssn;hasPreviousVisualisation">
+        <rdfs:label>hasPreviousVisualisation</rdfs:label>
+        <skos:definition>Relation that maps a Thing to a set of previous Visualisations</skos:definition>
+        <rdfs:range rdf:resource="&hssn;Visualisation"/>
+        <rdfs:domain rdf:resource="&owl;Thing"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasProcessingUnit -->
+
+    <ObjectProperty rdf:about="&hssn;hasProcessingUnit">
+        <rdfs:label>hasProcessor</rdfs:label>
+        <skos:definition>This relation maps the Hardware of a Device to its ProcessingUnit.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;Hardware"/>
+        <rdfs:range rdf:resource="&hssn;Processor"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasSoftware -->
+
+    <ObjectProperty rdf:about="&hssn;hasSoftware">
+        <rdfs:label>hasSoftware</rdfs:label>
+        <skos:definition>This relation maps a Device to its Software.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;Device"/>
+        <rdfs:range rdf:resource="&hssn;Software"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasStorageUnit -->
+
+    <ObjectProperty rdf:about="&hssn;hasStorageUnit">
+        <rdfs:label>hasMemory</rdfs:label>
+        <skos:definition>This relation maps the Hardware of a Device to its Memory.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;Hardware"/>
+        <rdfs:range rdf:resource="&hssn;Memory"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasSubMap -->
+
+    <ObjectProperty rdf:about="&hssn;hasSubMap">
+        <rdfs:label>hasSubMap</rdfs:label>
+        <rdfs:comment>The relationship between a location map and other included location maps</rdfs:comment>
+        <rdfs:domain rdf:resource="&hssn;LocationMap"/>
+        <rdfs:range rdf:resource="&hssn;LocationMap"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#hasVariables -->
+
+    <ObjectProperty rdf:about="&hssn;hasVariables">
+        <rdfs:label>hasVariables</rdfs:label>
+        <skos:definition>Maps a Service to the Variables it uses / generates.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;Service"/>
+        <rdfs:range rdf:resource="&hssn;Variables"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#horizontalSpreadDefinedBy -->
+
+    <ObjectProperty rdf:about="&hssn;horizontalSpreadDefinedBy">
+        <rdfs:label>hasHorizontalSpreadDefinedBy</rdfs:label>
+        <rdfs:comment>Helps identify the horizontal rotaional spread of a CoverageArea.</rdfs:comment>
+        <rdfs:domain rdf:resource="&hssn;CoverageArea"/>
+        <rdfs:range rdf:resource="&hssn;HorizontalSensingAngle"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#horizontalSpreadDefines -->
+
+    <ObjectProperty rdf:about="&hssn;horizontalSpreadDefines">
+        <rdfs:label>definesHorizontalSpreadOf</rdfs:label>
+        <rdfs:comment>Helps identify the horizontal rotational spread of a CoverageArea.</rdfs:comment>
+        <rdfs:range rdf:resource="&hssn;CoverageArea"/>
+        <rdfs:domain rdf:resource="&hssn;HorizontalSensingAngle"/>
+        <inverseOf rdf:resource="&hssn;horizontalSpreadDefinedBy"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#includedIn -->
+
+    <ObjectProperty rdf:about="&hssn;includedIn">
+        <rdfs:label>isIncludedIn</rdfs:label>
+        <rdfs:comment>The inverse of includes.</rdfs:comment>
+        <skos:definition>The inverse of includes.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;CoverageArea"/>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+        <inverseOf rdf:resource="&hssn;includes"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#includes -->
+
+    <ObjectProperty rdf:about="&hssn;includes">
+        <rdfs:label>includes</rdfs:label>
+        <rdfs:comment>includes is the object property that specifies which Locations are included in a Coverage Area.</rdfs:comment>
+        <skos:definition>includes is the object property that specifies which Locations are included in a Coverage Area.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;CoverageArea"/>
+        <rdfs:range rdf:resource="&hssn;Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#isDescribedBy -->
+
+    <ObjectProperty rdf:about="&hssn;isDescribedBy">
+        <rdfs:label>isDescribedBy</rdfs:label>
+        <skos:definition>The relation between an Infrastructure and it LocationMap helps represent the spatial elements of the Infrastructure.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;Infrastructure"/>
+        <rdfs:range rdf:resource="&hssn;LocationMap"/>
+        <inverseOf rdf:resource="&hssn;describes"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#mediaHaving -->
+
+    <ObjectProperty rdf:about="&hssn;mediaHaving">
+        <rdfs:label>hasMultimediaValue</rdfs:label>
+        <skos:definition>Maps an &apos;Observable Property&apos; of type MultimediaProperty to its concrete ObservationValue of type MultimediaValue.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;MultimediaProperty"/>
+        <rdfs:range rdf:resource="&hssn;MultimediaValue"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#mediaOfA -->
+
+    <ObjectProperty rdf:about="&hssn;mediaOfA">
+        <rdfs:label>isMultimediaValueOf</rdfs:label>
+        <skos:definition>Maps a concrete ObservationValue of type MultimediaValue to its &apos;Observable Property&apos; of type MultimediaProperty .</skos:definition>
+        <rdfs:range rdf:resource="&hssn;MultimediaProperty"/>
+        <rdfs:domain rdf:resource="&hssn;MultimediaValue"/>
+        <inverseOf rdf:resource="&hssn;mediaHaving"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#mediaSensedBy -->
+
+    <ObjectProperty rdf:about="&hssn;mediaSensedBy">
+        <rdfs:label>isMultimediaSensedBy</rdfs:label>
+        <skos:definition>Maps a MultimediaProperty to a Sensor capable of observing it.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;MultimediaProperty"/>
+        <inverseOf rdf:resource="&hssn;mediaSenses"/>
+        <rdfs:range rdf:resource="&sosa;Sensor"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#mediaSenses -->
+
+    <ObjectProperty rdf:about="&hssn;mediaSenses">
+        <rdfs:label>mediaSenses</rdfs:label>
+        <skos:definition>Maps a Sensor to a MultimediaProperty it can observe.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;MultimediaProperty"/>
+        <rdfs:domain rdf:resource="&sosa;Sensor"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#previouslyCoveredBy -->
+
+    <ObjectProperty rdf:about="&hssn;previouslyCoveredBy">
+        <rdfs:label>isPreviouslyCoveredBy</rdfs:label>
+        <skos:definition>Maps a CoverageArea to MobileSensors that used to cover it.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;CoverageArea"/>
+        <rdfs:range rdf:resource="&sosa;Sensor"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#previouslyLocated -->
+
+    <ObjectProperty rdf:about="&hssn;previouslyLocated">
+        <rdfs:label>hasPreviuoslyLocated</rdfs:label>
+        <skos:definition>Maps a Location to MobileSensors that were located at it.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;Location"/>
+        <rdfs:range rdf:resource="&hssn;MobileDevice"/>
+        <inverseOf rdf:resource="&hssn;hasPastLocation"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#producedBy -->
+
+    <ObjectProperty rdf:about="&hssn;producedBy">
+        <rdfs:label>isProducedBy</rdfs:label>
+        <skos:definition>Maps an ObservationValue to the Observation process that created the value.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;ObservationValue"/>
+        <rdfs:range rdf:resource="&sosa;Observation"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#produces -->
+
+    <ObjectProperty rdf:about="&hssn;produces">
+        <rdfs:label>produces</rdfs:label>
+        <skos:definition>Maps an Observation process to the ObservationValues that it produced.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;ObservationValue"/>
+        <inverseOf rdf:resource="&hssn;producedBy"/>
+        <rdfs:domain rdf:resource="&sosa;Observation"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#providedBy -->
+
+    <ObjectProperty rdf:about="&hssn;providedBy">
+        <rdfs:label>isProvidedBy</rdfs:label>
+        <skos:definition>Maps a Sevice to the Devices that provide it.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;Device"/>
+        <inverseOf rdf:resource="&hssn;providesService"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#providesService -->
+
+    <ObjectProperty rdf:about="&hssn;providesService">
+        <rdfs:label>provides</rdfs:label>
+        <skos:definition>Maps a Device to the Services it provides</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;Device"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#relatedToDevice -->
+
+    <ObjectProperty rdf:about="&hssn;relatedToDevice">
+        <rdfs:label>isRelatedToDevice</rdfs:label>
+        <skos:definition>Maps a Hardware to a Device.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;Device"/>
+        <rdfs:domain rdf:resource="&hssn;Hardware"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#requestedBy -->
+
+    <ObjectProperty rdf:about="&hssn;requestedBy">
+        <rdfs:label>isRequestedBy</rdfs:label>
+        <rdfs:comment>Defines the relation between a service&apos;s Capability / Functionality and the user defined Goals that need to be satisfied.</rdfs:comment>
+        <rdfs:domain rdf:resource="&hssn;Capability"/>
+        <rdfs:range rdf:resource="&hssn;UserGoal"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#scalarHaving -->
+
+    <ObjectProperty rdf:about="&hssn;scalarHaving">
+        <rdfs:label>hasScalarValue</rdfs:label>
+        <skos:definition>Maps an &apos;Observable Property&apos; of type ScalarPropertyto its concrete ObservationValue of type ScalarValue.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;ScalarProperty"/>
+        <rdfs:range rdf:resource="&hssn;ScalarValue"/>
+        <inverseOf rdf:resource="&hssn;scalarOfA"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#scalarOfA -->
+
+    <ObjectProperty rdf:about="&hssn;scalarOfA">
+        <rdfs:label>isScalarValueOf</rdfs:label>
+        <skos:definition>Maps a concrete ObservationValue of type ScalarValue to its &apos;Observable Property&apos; of type ScalarProperty .</skos:definition>
+        <rdfs:range rdf:resource="&hssn;ScalarProperty"/>
+        <rdfs:domain rdf:resource="&hssn;ScalarValue"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#sensedBy -->
+
+    <ObjectProperty rdf:about="&hssn;sensedBy">
+        <rdfs:label>isScalarSensedBy</rdfs:label>
+        <skos:definition>The inverse of senses.</skos:definition>
+        <rdfs:comment>The inverse of senses.</rdfs:comment>
+        <rdfs:domain rdf:resource="&hssn;ScalarProperty"/>
+        <inverseOf rdf:resource="&hssn;senses"/>
+        <rdfs:range rdf:resource="&sosa;Sensor"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#senses -->
+
+    <ObjectProperty rdf:about="&hssn;senses">
+        <rdfs:label>scalarSenses</rdfs:label>
+        <rdfs:comment>senses is the object property mapping a Media or Scalar Sensor to a set of sensed Properties. A Scalar Sensor can only sense a set of Scalar Properties. A Media Sensor can sense a set of Scalar and Multimedia Properties. A Media Sensor has to a least sense one Multimedia Property.</rdfs:comment>
+        <skos:definition>senses is the object property mapping a Media or Scalar Sensor to a set of sensed Properties. A Scalar Sensor can only sense a set of Scalar Properties. A Media Sensor can sense a set of Scalar and Multimedia Properties. A Media Sensor has to at least sense one Multimedia Property.</skos:definition>
+        <rdfs:range rdf:resource="&hssn;ScalarProperty"/>
+        <rdfs:domain rdf:resource="&sosa;Sensor"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#unitDeployedOn -->
+
+    <ObjectProperty rdf:about="&hssn;unitDeployedOn">
+        <rdfs:label>isExpansionCardOf</rdfs:label>
+        <skos:definition>Maps an ExpansionCard to the Hardware it belongs to.</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;ExpansionCard"/>
+        <rdfs:range rdf:resource="&hssn;Hardware"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#verticalSpreadDefinedBy -->
+
+    <ObjectProperty rdf:about="&hssn;verticalSpreadDefinedBy">
+        <rdfs:label>hasVerticalSpreadDefinedBy</rdfs:label>
+        <rdfs:comment>Helps identify the vertical rotaional spread of a CoverageArea.</rdfs:comment>
+        <rdfs:domain rdf:resource="&hssn;CoverageArea"/>
+        <rdfs:range rdf:resource="&hssn;VerticalSensingAngle"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#verticalSpreadDefines -->
+
+    <ObjectProperty rdf:about="&hssn;verticalSpreadDefines">
+        <rdfs:label>definesVerticalSpreadOf</rdfs:label>
+        <rdfs:comment>Helps identify the vertical rotaional spread of a CoverageArea.</rdfs:comment>
+        <rdfs:range rdf:resource="&hssn;CoverageArea"/>
+        <rdfs:domain rdf:resource="&hssn;VerticalSensingAngle"/>
+        <inverseOf rdf:resource="&hssn;verticalSpreadDefinedBy"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#visualisedBy -->
+
+    <ObjectProperty rdf:about="&hssn;visualisedBy">
+        <rdfs:label>isCurrentlyVisualisedBy</rdfs:label>
+        <skos:definition>Relation that maps a Thing to a Visualisation</skos:definition>
+        <rdfs:range rdf:resource="&hssn;Visualisation"/>
+        <inverseOf rdf:resource="&hssn;visualises"/>
+        <rdfs:domain rdf:resource="&owl;Thing"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#visualises -->
+
+    <ObjectProperty rdf:about="&hssn;visualises">
+        <rdfs:label>currentlyVisualises</rdfs:label>
+        <skos:definition>Relation that maps a Visualisation to a Thing</skos:definition>
+        <rdfs:domain rdf:resource="&hssn;Visualisation"/>
+        <rdfs:range rdf:resource="&owl;Thing"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#hasAccuracy -->
+
+    <ObjectProperty rdf:about="&rdfs;hasAccuracy">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#hasAverageValue -->
+
+    <ObjectProperty rdf:about="&rdfs;hasAverageValue"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#hasSamplingTime -->
+
+    <ObjectProperty rdf:about="&rdfs;hasSamplingTime">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#isAvatarOf -->
+
+    <ObjectProperty rdf:about="&rdfs;isAvatarOf">
+        <rdfs:label>isAvatarOf</rdfs:label>
+        <skos:definition>The virtual representation of an entity</skos:definition>
+        <skos:example>VirtualSensor is an avatar of the real physical Sensor</skos:example>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#isPartOf -->
+
+    <ObjectProperty rdf:about="&rdfs;isPartOf">
+        <rdfs:label>isPartOf</rdfs:label>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#usesA -->
+
+    <ObjectProperty rdf:about="&rdfs;usesA">
+        <rdfs:label>usesA</rdfs:label>
+        <rdfs:range rdf:resource="&rdfs;WeatherAPI"/>
+        <rdfs:domain rdf:resource="&rdfs;WeatherState"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasBeginning -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#hasBeginning">
+        <rdfs:label>hasBegining</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasDateTimeDescription -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#hasDateTimeDescription">
+        <rdfs:label>hasDateTimeDescription</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasEnd -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#hasEnd">
+        <rdfs:label>hasEnd</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasTRS -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#hasTRS">
+        <rdfs:label>hasTRS</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TRS"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#inDateTime -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#inDateTime">
+        <rdfs:label>inDateTime</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#inTemporalPosition -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#inTemporalPosition">
+        <rdfs:label>inTemporalPosition</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#inTimePosition -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#inTimePosition">
+        <rdfs:label>inTimePosition</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#inside -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#inside">
+        <rdfs:label>inside</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Interval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalAfter -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalAfter">
+        <rdfs:label>intervalAfter</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalBefore -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalBefore">
+        <rdfs:label>intervalBefore</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalContains -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalContains">
+        <rdfs:label>intervalContains</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalDisjoint -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalDisjoint">
+        <rdfs:label>intervalDisjoint</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalDuring -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalDuring">
+        <rdfs:label>intervalDuring</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalEquals -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalEquals">
+        <rdfs:label>intervalEquals</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalFinishedBy -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalFinishedBy">
+        <rdfs:label>intervalFinishedBy</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalFinishes -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalFinishes">
+        <rdfs:label>intervalFinishes</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalIn -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalIn">
+        <rdfs:label>intervalIn</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalMeets -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalMeets">
+        <rdfs:label>intervalMeets</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalMetBy -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalMetBy">
+        <rdfs:label>intervalMetBy</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalOverlappedBy -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalOverlappedBy">
+        <rdfs:label>intervalOverlappedBy</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalOverlaps -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalOverlaps">
+        <rdfs:label>intervalOverlaps</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalStartedBy -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalStartedBy">
+        <rdfs:label>intervalStartedBy</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#intervalStarts -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2006/time#intervalStarts">
+        <rdfs:label>intervalStarts</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hosts -->
+
+    <ObjectProperty rdf:about="&sosa;hosts"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/madeObservation -->
+
+    <ObjectProperty rdf:about="&sosa;madeObservation"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/observes -->
+
+    <ObjectProperty rdf:about="&sosa;observes"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/usedProcedure -->
+
+    <ObjectProperty rdf:about="&sosa;usedProcedure"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/detects -->
+
+    <ObjectProperty rdf:about="&ssn;detects"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/hasOutput -->
+
+    <ObjectProperty rdf:about="&ssn;hasOutput"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#osDetails -->
+
+    <DatatypeProperty rdf:about="&hssn;osDetails">
+        <rdfs:label>osDetails</rdfs:label>
+        <rdfs:comment>Describes additional information about the software &amp; operating system of a Device</rdfs:comment>
+        <rdfs:domain rdf:resource="&hssn;Software"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#inXSDDate -->
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2006/time#inXSDDate">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#inXSDDateTime -->
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2006/time#inXSDDateTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#inXSDDateTimeStamp -->
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2006/time#inXSDDateTimeStamp">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#inXSDgYear -->
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2006/time#inXSDgYear">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#inXSDgYearMonth -->
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2006/time#inXSDgYearMonth">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#xsdDateTime -->
+
+    <DatatypeProperty rdf:about="http://www.w3.org/2006/time#xsdDateTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#AnnotationDescriptor -->
+
+    <Class rdf:about="&mssn;AnnotationDescriptor">
+        <rdfs:label>AnnotationDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MediaDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#Audio -->
+
+    <Class rdf:about="&mssn;Audio">
+        <rdfs:label>Audio</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MediaConcerned"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#AudioDescriptor -->
+
+    <Class rdf:about="&mssn;AudioDescriptor">
+        <rdfs:label>AudioDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MediaDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#AudioSegment -->
+
+    <Class rdf:about="&mssn;AudioSegment">
+        <rdfs:label>AudioSegment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MediaSegment"/>
+        <rdfs:comment>An audio segment is a segment for modeling audio data of MultimediaData</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#BoundingBoxDescriptor -->
+
+    <Class rdf:about="&mssn;BoundingBoxDescriptor">
+        <rdfs:label>BoundingBoxDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;SpatialDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#CameraMotionDescriptor -->
+
+    <Class rdf:about="&mssn;CameraMotionDescriptor">
+        <rdfs:label>CameraMotionDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MotionDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#ColorLayoutDescriptor -->
+
+    <Class rdf:about="&mssn;ColorLayoutDescriptor">
+        <rdfs:label>ColorLayoutDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;VisualDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#ColorStructureDescriptor -->
+
+    <Class rdf:about="&mssn;ColorStructureDescriptor">
+        <rdfs:label>ColorStructureDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;VisualDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#ContourShapeDescriptor -->
+
+    <Class rdf:about="&mssn;ContourShapeDescriptor">
+        <rdfs:label>ContourShapeDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;VisualDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#DominatColorDescriptor -->
+
+    <Class rdf:about="&mssn;DominatColorDescriptor">
+        <rdfs:label>DominantColorDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;VisualDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#EdgeHistogramDescriptor -->
+
+    <Class rdf:about="&mssn;EdgeHistogramDescriptor">
+        <rdfs:label>EdgeHistogramDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;VisualDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#FaceRecognitionDescriptor -->
+
+    <Class rdf:about="&mssn;FaceRecognitionDescriptor">
+        <rdfs:label>FaceRecognitionDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;VisualDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#FundamentalFrequency -->
+
+    <Class rdf:about="&mssn;FundamentalFrequency">
+        <rdfs:label>FundementalFrequency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#HarmonicDescriptor -->
+
+    <Class rdf:about="&mssn;HarmonicDescriptor">
+        <rdfs:label>HarmonicDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#HarmonicSpectralCentroid -->
+
+    <Class rdf:about="&mssn;HarmonicSpectralCentroid">
+        <rdfs:label>HormonicSpectralCentroid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#HarmonicSpectralDeviation -->
+
+    <Class rdf:about="&mssn;HarmonicSpectralDeviation">
+        <rdfs:label>HarmonicSpectralDeviation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#HarmonicSpectralSpread -->
+
+    <Class rdf:about="&mssn;HarmonicSpectralSpread">
+        <rdfs:label>HarmonicSpectralSpread</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#HarmonicSpectralVariation -->
+
+    <Class rdf:about="&mssn;HarmonicSpectralVariation">
+        <rdfs:label>HarmonicSpectralVariation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#Image -->
+
+    <Class rdf:about="&mssn;Image">
+        <rdfs:label>Image</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MediaConcerned"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#LogAttackTime -->
+
+    <Class rdf:about="&mssn;LogAttackTime">
+        <rdfs:label>LogAttackTime</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#MediaConcerned -->
+
+    <Class rdf:about="&mssn;MediaConcerned">
+        <rdfs:label>MediaConcerned</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;MultimediaProperty"/>
+        <rdfs:comment>MediaConcerned is a concept that is used as a property of a media sensor for indicating a kind of multimedia data that can be produce by a given media sensor.
+For example, a video camera which capture audio and video has &quot;Audio&quot; and &quot;Video&quot; as its media concerned</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#MediaDescriptor -->
+
+    <Class rdf:about="&mssn;MediaDescriptor">
+        <rdfs:label>MultimediaDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;MultimediaValue"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&mssn;hasMediaSegment"/>
+                <someValuesFrom rdf:resource="&mssn;MultimediaData"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#MediaDurationDescriptor -->
+
+    <Class rdf:about="&mssn;MediaDurationDescriptor">
+        <rdfs:label>MediaDurationDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;TemporalDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#MediaSegment -->
+
+    <Class rdf:about="&mssn;MediaSegment">
+        <rdfs:label>MediaSegment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MultimediaData"/>
+        <rdfs:comment>A media segment is a part of a multimedia data.  It is used for represent a segment or a track of a multimedia data.  For example,  a video file can have one video track, one audio track and one subtitle track.  This can be represented by modeling a &quot;MultimediaData&quot; concept with three MediaSegment concepts.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#MediaTimePointDescriptor -->
+
+    <Class rdf:about="&mssn;MediaTimePointDescriptor">
+        <rdfs:label>MediaTimePointDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;TemporalDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#MotionActivityDescriptor -->
+
+    <Class rdf:about="&mssn;MotionActivityDescriptor">
+        <rdfs:label>MotionActivityDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MotionDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#MotionDescriptor -->
+
+    <Class rdf:about="&mssn;MotionDescriptor">
+        <rdfs:label>MotionDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MediaDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#MultimediaData -->
+
+    <Class rdf:about="&mssn;MultimediaData">
+        <rdfs:label>MultimediaData</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;MultimediaValue"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&mssn;hasMediaDescriptor"/>
+                <someValuesFrom rdf:resource="&mssn;MediaDescriptor"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A multimedia data is an observation value of a media sensor. A multimedia data can contains multiple media segment where each segment can be decomposed into multiple sub-mediasegments</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#ParametricMotionDescriptor -->
+
+    <Class rdf:about="&mssn;ParametricMotionDescriptor">
+        <rdfs:label>ParametricMotionDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MotionDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#PointDescriptor -->
+
+    <Class rdf:about="&mssn;PointDescriptor">
+        <rdfs:label>PointDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;SpatialDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#PowerDescriptor -->
+
+    <Class rdf:about="&mssn;PowerDescriptor">
+        <rdfs:label>PowerDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#ScalableColorDescriptor -->
+
+    <Class rdf:about="&mssn;ScalableColorDescriptor">
+        <rdfs:label>ScalableColorDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;VisualDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#SpatialDescriptor -->
+
+    <Class rdf:about="&mssn;SpatialDescriptor">
+        <rdfs:label>SpatialDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MediaDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#SpectralCentroid -->
+
+    <Class rdf:about="&mssn;SpectralCentroid">
+        <rdfs:label>SpectralCentroid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#SpectrumBasis -->
+
+    <Class rdf:about="&mssn;SpectrumBasis">
+        <rdfs:label>SpectrumBasis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#SpectrumCentroid -->
+
+    <Class rdf:about="&mssn;SpectrumCentroid">
+        <rdfs:label>SpectrumCentroid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#SpectrumEnvelop -->
+
+    <Class rdf:about="&mssn;SpectrumEnvelop">
+        <rdfs:label>SpectrumEnvelop</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#SpectrumFlatness -->
+
+    <Class rdf:about="&mssn;SpectrumFlatness">
+        <rdfs:label>SpectrumFlatness</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#SpectrumProjection -->
+
+    <Class rdf:about="&mssn;SpectrumProjection">
+        <rdfs:label>SpectrumProjection</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#SpectrumSpread -->
+
+    <Class rdf:about="&mssn;SpectrumSpread">
+        <rdfs:label>SpectrumSpread</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#TemporalCentroid -->
+
+    <Class rdf:about="&mssn;TemporalCentroid">
+        <rdfs:label>TemporalCentroid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#TemporalDescriptor -->
+
+    <Class rdf:about="&mssn;TemporalDescriptor">
+        <rdfs:label>TemporalDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MediaDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#TextAnnotationDescriptor -->
+
+    <Class rdf:about="&mssn;TextAnnotationDescriptor">
+        <rdfs:label>TextAnnotationDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AnnotationDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#TrajectoryDescriptor -->
+
+    <Class rdf:about="&mssn;TrajectoryDescriptor">
+        <rdfs:label>TrajectoryDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MotionDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#Video -->
+
+    <Class rdf:about="&mssn;Video">
+        <rdfs:label>Video</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MediaConcerned"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#VisualDescriptor -->
+
+    <Class rdf:about="&mssn;VisualDescriptor">
+        <rdfs:label>VisualDescriptor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MediaDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#VisualSegment -->
+
+    <Class rdf:about="&mssn;VisualSegment">
+        <rdfs:label>VisualSegment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MediaSegment"/>
+        <rdfs:comment>A visual segment is a media segment for modeling visual data (e.g. video segment, image segment)</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#WarpingParameters -->
+
+    <Class rdf:about="&mssn;WarpingParameters">
+        <rdfs:label>WarpingParameters</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;MotionDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://mssn.sigappfr.org/mssn#Waveform -->
+
+    <Class rdf:about="&mssn;Waveform">
+        <rdfs:label>Waveform</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&mssn;AudioDescriptor"/>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#2DSpace -->
+
+    <Class rdf:about="&hssn;2DSpace">
+        <rdfs:subClassOf rdf:resource="&hssn;Cartesian"/>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#3DSpace -->
+
+    <Class rdf:about="&hssn;3DSpace">
+        <rdfs:subClassOf rdf:resource="&hssn;Cartesian"/>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Capability -->
+
+    <Class rdf:about="&hssn;Capability">
+        <rdfs:label>Capability</rdfs:label>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;requestedBy"/>
+                <someValuesFrom rdf:resource="&hssn;UserGoal"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The functionality provided by a Service is described by its Capability.</rdfs:comment>
+        <skos:definition>The functionality provided by a Service is described by its Capability.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Cartesian -->
+
+    <Class rdf:about="&hssn;Cartesian">
+        <rdfs:label>Cartesian</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;SpaceType"/>
+        <skos:definition>A 2D/3D-based visualisation space</skos:definition>
+        <rdfs:comment>A 2D/3D-based visualisation space</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#CommunicationRange -->
+
+    <Class rdf:about="&hssn;CommunicationRange">
+        <rdfs:label>CommunicationRange</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Context -->
+
+    <Class rdf:about="&hssn;Context">
+        <rdfs:label>Context</rdfs:label>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;affects"/>
+                <onClass rdf:resource="&hssn;Visualisation"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <skos:definition>Set of contextual information mapped to specific components</skos:definition>
+        <rdfs:comment>Set of contextual information mapped to specific components</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#CoverageArea -->
+
+    <Class rdf:about="&hssn;CoverageArea">
+        <rdfs:label>CoverageArea</rdfs:label>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;horizontalSpreadDefinedBy"/>
+                <onClass rdf:resource="&hssn;HorizontalSensingAngle"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;centeredAround"/>
+                <onClass rdf:resource="&hssn;SensingLocation"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;previouslyCoveredBy"/>
+                <someValuesFrom rdf:resource="&sosa;Sensor"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;currentlyCoveredBy"/>
+                <onClass rdf:resource="&sosa;Sensor"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;includes"/>
+                <onClass rdf:resource="&hssn;Location"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;verticalSpreadDefinedBy"/>
+                <onClass rdf:resource="&hssn;VerticalSensingAngle"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;delimitedBy"/>
+                <onClass rdf:resource="&hssn;SensingRange"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;atCoverageTime"/>
+                <onClass rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <skos:example>Example 1: 
+For a mobile temperature sensor sens1:
+       L is the location of the sensor
+       VA = HA = 360°
+       R = 15m
+Therefore the coverage area is the sphere of center P and radius (range) 15m.
+
+Example 2: 
+For a static video surveillance camera sens2:
+       L is the location of the sensor
+       VA = 45° / HA = 30°
+       R = 30m
+Therefore the coverage area is the sector of space centered around the sensor&apos;s location and spreading on a 45° vertical angle, a 30° horizontal angle, and extending to a 30m range.</skos:example>
+        <rdfs:comment>A Coverage Area is a geographical zone that includes a set of Locations within the range of at least one sensor.</rdfs:comment>
+        <skos:definition>A CoverageArea is a geographical zone that includes a set of Locations within the range of one sensor. The CoverageArea  is defined by a location L, vertical and horizontal angles VA / HA, and a range R where:
+      L is the Location, i.e., of the location of the sensor covering the area (depending on the sensor type Mobile | Scalar the CoverageArea moves, rotates, or remains still).
+      VA / HA are the Vertical / Horizontal Angles, specified in the sensor&apos;s technical sheet.
+      R is the Range of the sensor, i.e., the distance in meters in any given direction such that the sensor is still capable of sensing. This value is also specified by the sensor&apos;s technical sheet.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#DescriptiveDocuments -->
+
+    <Class rdf:about="&hssn;DescriptiveDocuments">
+        <rdfs:label>DescriptiveDocuments</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Metadata"/>
+        <rdfs:comment>A set of references (paths/URI) to documents that describe a component</rdfs:comment>
+        <skos:definition>A set of references (paths/URI) to documents that describe a component</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Device -->
+
+    <Class rdf:about="&hssn;Device">
+        <rdfs:label>Device</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sosa;Platform"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;providesService"/>
+                <allValuesFrom rdf:resource="&hssn;Service"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasSoftware"/>
+                <someValuesFrom rdf:resource="&hssn;Software"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;currentlyLocatedAt"/>
+                <onClass rdf:resource="&hssn;Location"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasHardware"/>
+                <someValuesFrom rdf:resource="&hssn;Hardware"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <skos:definition>A Device is an electronic equipment capable of one or more computing functions and supporting the installation of firmware or third-party software.</skos:definition>
+        <rdfs:comment>A Device is an electonic equipment capable of one or more computing functions and supporting the installation of firmware or third-party software. </rdfs:comment>
+        <skos:example>A Mobile Phone is a Device capable of sensing data through its sensors, processing data, storing data, and communicating with other devices.</skos:example>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#ExpansionCard -->
+
+    <Class rdf:about="&hssn;ExpansionCard">
+        <rdfs:label>ExpansionCard</rdfs:label>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasEmbeddedSystem"/>
+                <someValuesFrom rdf:resource="&ssn;System"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;unitDeployedOn"/>
+                <someValuesFrom rdf:resource="&hssn;Hardware"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <skos:definition>The Expansion Card is a plugin (additional) card. Systems (e.g., sensors) are deployed on the Expansion Card of a Device.</skos:definition>
+        <skos:example>Mobile phone sensors are deployed on the expansion card of the device.</skos:example>
+        <rdfs:comment>The Expansion Card is a plugin (additional) card. Systems (e.g., sensors) are deployed on the Expansion Card of a Device.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Hardware -->
+
+    <Class rdf:about="&hssn;Hardware">
+        <rdfs:label>Hardware</rdfs:label>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasPowerUnit"/>
+                <someValuesFrom rdf:resource="&hssn;PowerSupply"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasDeployUnit"/>
+                <someValuesFrom rdf:resource="&hssn;ExpansionCard"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasProcessingUnit"/>
+                <someValuesFrom rdf:resource="&hssn;Processor"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasComUnit"/>
+                <someValuesFrom rdf:resource="&hssn;NetworkInterface"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;relatedToDevice"/>
+                <someValuesFrom rdf:resource="&hssn;Device"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasStorageUnit"/>
+                <someValuesFrom rdf:resource="&hssn;Memory"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A Hardware is a component of a Device responsible of specific functionalities</rdfs:comment>
+        <skos:definition>A Hardware is a component of a Device responsible of specific functionalities.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#HorizontalAngle -->
+
+    <Class rdf:about="&hssn;HorizontalAngle">
+        <rdfs:label>HorizontalAngle</rdfs:label>
+        <equivalentClass rdf:resource="&hssn;HorizontalSensingAngle"/>
+        <rdfs:subClassOf rdf:resource="&ssn;systems/SystemProperty"/>
+        <skos:example>A temperature sensor has a 360° vertical and horizontal angles, i.e., can sense temperature in any given direction.
+
+While a tele-surveillance camera might have an horizontal spread over a 45° angle and a vertical spread over a 30° angle. Any object outside the spread of these angles is not sensed by the camera lens.</skos:example>
+        <rdfs:comment>HorizontalAngle defines the trigonometric horizontal spread of a system&apos;s capability</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#HorizontalSensingAngle -->
+
+    <Class rdf:about="&hssn;HorizontalSensingAngle">
+        <rdfs:label>HorizontalSensingAngle</rdfs:label>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;horizontalSpreadDefines"/>
+                <onClass rdf:resource="&hssn;CoverageArea"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The maximal horizontal sensing angle provided by the sensor.</rdfs:comment>
+        <skos:example>For example a temperature, humidity, noise, etc. sensor has a vertical and horizontal sensing angles are 360°. This changes the geometry of the CovergaeArea to a circle.
+In other cases, e.g., static video surveillance cameras the vertical and horizontal sensing angles differ from one camera to another: e.g., 30°, 45°,  60°, etc. This changes the geometry of the CoverageArea to a sector in space.</skos:example>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Icon -->
+
+    <Class rdf:about="&hssn;Icon">
+        <rdfs:label>Icon</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Visualisation"/>
+        <skos:definition>A logo/icon representation of a component in a specific space</skos:definition>
+        <rdfs:comment>A logo/icon representation of a component in a specific space</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Infrastructure -->
+
+    <Class rdf:about="&hssn;Infrastructure">
+        <rdfs:label>Infrastructure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sosa;Platform"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;isDescribedBy"/>
+                <onClass rdf:resource="&hssn;LocationMap"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&sosa;hosts"/>
+                <someValuesFrom rdf:resource="&sosa;Platform"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An infrastructure is a real world physical infrastructure or environment where a sensor network might be deployed.</rdfs:comment>
+        <skos:definition>An infrastructure is a real world physical infrastructure or environment where a sensor network might be deployed.</skos:definition>
+        <skos:example>Building, Office, City, Mall</skos:example>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Input -->
+
+    <Class rdf:about="&hssn;Input">
+        <rdfs:label>Input</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Variables"/>
+        <rdfs:comment>Input is the set of variables and constraints required at the input end of a service in order to achieve a correct exection of the service&apos;s functionality (capability).</rdfs:comment>
+        <skos:definition>Input is the set of variables and constraints required at the input end of a service in order to achieve a correct exection of the service&apos;s functionality (capability).</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Interface -->
+
+    <Class rdf:about="&hssn;Interface">
+        <rdfs:label>Interface</rdfs:label>
+        <skos:definition>The interface represents how a service can be contacted by / connected to other entities such as service requesters or other services.</skos:definition>
+        <rdfs:comment>The interface represents how a service can be contacted by / connected to other entities such as service requesters or other services.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Location -->
+
+    <Class rdf:about="&hssn;Location">
+        <equivalentClass rdf:resource="&hssn;SensingLocation"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;composes"/>
+                <allValuesFrom rdf:resource="&hssn;LocationMap"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;currentlyLocates"/>
+                <someValuesFrom rdf:resource="&hssn;Device"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;atLocationTime"/>
+                <onClass rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;includedIn"/>
+                <onClass rdf:resource="&hssn;CoverageArea"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</minQualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&mssn;locationRelation"/>
+                <someValuesFrom rdf:resource="&hssn;Location"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;previouslyLocated"/>
+                <someValuesFrom rdf:resource="&hssn;MobileDevice"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#LocationMap -->
+
+    <Class rdf:about="&hssn;LocationMap">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasSubMap"/>
+                <someValuesFrom rdf:resource="&hssn;LocationMap"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;describes"/>
+                <allValuesFrom rdf:resource="&hssn;Infrastructure"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;composedOf"/>
+                <allValuesFrom rdf:resource="&hssn;Location"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Map-based -->
+
+    <Class rdf:about="&hssn;Map-based">
+        <rdfs:label>Map-based</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;SpaceType"/>
+        <skos:definition>A GPS-based visualisation space that relies on real underlying maps</skos:definition>
+        <rdfs:comment>A GPS-based visualisation space that relies on real underlying maps</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Memory -->
+
+    <Class rdf:about="&hssn;Memory">
+        <rdfs:label>Memory</rdfs:label>
+        <rdfs:comment>The set of all memories of a Device.</rdfs:comment>
+        <skos:definition>The set of all memories of a Device.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Metadata -->
+
+    <Class rdf:about="&hssn;Metadata">
+        <rdfs:label>Metadata</rdfs:label>
+        <skos:definition>Metadata represent the properties that describe a Thing.</skos:definition>
+        <rdfs:comment>Metadata represent the properties that describe a Thing.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#MobileDevice -->
+
+    <Class rdf:about="&hssn;MobileDevice">
+        <rdfs:label>MobileDevice</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Device"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasPastLocation"/>
+                <someValuesFrom rdf:resource="&hssn;Location"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A Mobile Device is a device that has the ability to move around, and change position in time.</rdfs:comment>
+        <skos:definition>A Mobile Device is a device that has the ability to move around, and change position in time.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#MultimediaProperty -->
+
+    <Class rdf:about="&hssn;MultimediaProperty">
+        <rdfs:label>MultimediaProperty</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sosa;ObservableProperty"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;mediaHaving"/>
+                <allValuesFrom rdf:resource="&hssn;MultimediaValue"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;mediaSensedBy"/>
+                <someValuesFrom rdf:resource="&sosa;Sensor"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#MultimediaValue -->
+
+    <Class rdf:about="&hssn;MultimediaValue">
+        <rdfs:label>MultimediaValue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;ObservationValue"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;mediaOfA"/>
+                <allValuesFrom rdf:resource="&hssn;MultimediaProperty"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#NetworkInterface -->
+
+    <Class rdf:about="&hssn;NetworkInterface">
+        <rdfs:label>NetworkInterface</rdfs:label>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasCommunicationRange"/>
+                <onClass rdf:resource="&hssn;CommunicationRange"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The Network Interface is part of the Hardware responsible for communication.</rdfs:comment>
+        <skos:definition>The Network Interface is part of the Hardware responsible for communication.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#ObservationValue -->
+
+    <Class rdf:about="&hssn;ObservationValue">
+        <rdfs:label>ObservationValue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sosa;Result"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;atSensingTime"/>
+                <onClass rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Specifies the actual concrete value generated due to an Observation.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Output -->
+
+    <Class rdf:about="&hssn;Output">
+        <rdfs:label>Output</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Variables"/>
+        <skos:definition>Output is the set of variables and effects generated by a service after a correct exection of the service&apos;s functionality (capability).</skos:definition>
+        <rdfs:comment>Output is the set of variables and effects generated by a service after a correct exection of the service&apos;s functionality (capability).</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#PowerSupply -->
+
+    <Class rdf:about="&hssn;PowerSupply">
+        <rdfs:label>PowerSupply</rdfs:label>
+        <rdfs:comment>Power Supply is the Hardware responsible for providing power in order to allow the Device optimal functioning.</rdfs:comment>
+        <skos:definition>Power Supply is the Hardware responsible for providing power in order to allow the Device optimal functioning.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Processor -->
+
+    <Class rdf:about="&hssn;Processor">
+        <rdfs:label>Processor</rdfs:label>
+        <skos:definition>The Processor is the Hardware responsible for the processing of data in the Devices.</skos:definition>
+        <rdfs:comment>The Processor is the Hardware responsible for the processing of data in the Devices.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Range -->
+
+    <Class rdf:about="&hssn;Range">
+        <rdfs:label>Range</rdfs:label>
+        <equivalentClass rdf:resource="&hssn;SensingRange"/>
+        <rdfs:subClassOf rdf:resource="&ssn;systems/SystemProperty"/>
+        <skos:example>If a sensor has a Range of 10 m, it cannot sense properties that are 20 m away.</skos:example>
+        <skos:definition>The range is the maximal distance (in meters) that delimits a system&apos;s operational capability. 
+i.e., The maximal distance that delimits a sensor&apos;s sensing capability, an actuator&apos;s actuation capability, a sampler&apos;s sampling capability.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#RangeRepresentation -->
+
+    <Class rdf:about="&hssn;RangeRepresentation">
+        <rdfs:label>RangeRepresentation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Visualisation"/>
+        <skos:definition>A circular radius-based representation of the range of a component</skos:definition>
+        <rdfs:comment>A circular radius-based representation of the range of a component</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#ScalarProperty -->
+
+    <Class rdf:about="&hssn;ScalarProperty">
+        <rdfs:label>ScalarProperty</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sosa;ObservableProperty"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;scalarHaving"/>
+                <allValuesFrom rdf:resource="&hssn;ScalarValue"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;sensedBy"/>
+                <someValuesFrom rdf:resource="&sosa;Sensor"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#ScalarValue -->
+
+    <Class rdf:about="&hssn;ScalarValue">
+        <rdfs:label>ScalarValue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;ObservationValue"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;scalarOfA"/>
+                <allValuesFrom rdf:resource="&hssn;ScalarProperty"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#SensingLocation -->
+
+    <Class rdf:about="&hssn;SensingLocation">
+        <rdfs:label>SensingLocation</rdfs:label>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;centers"/>
+                <onClass rdf:resource="&hssn;CoverageArea"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <skos:definition>The SensingLocation is the location of the sensor that covers this CoverageArea.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#SensingRange -->
+
+    <Class rdf:about="&hssn;SensingRange">
+        <rdfs:label>SensingRange</rdfs:label>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;delimits"/>
+                <onClass rdf:resource="&hssn;CoverageArea"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <skos:definition>The maximal sensing distance provided by the sensor.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Service -->
+
+    <Class rdf:about="&hssn;Service">
+        <rdfs:label>Service</rdfs:label>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasInterfaces"/>
+                <allValuesFrom rdf:resource="&hssn;Interface"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;providedBy"/>
+                <allValuesFrom rdf:resource="&hssn;Device"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasCapability"/>
+                <allValuesFrom rdf:resource="&hssn;Capability"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasVariables"/>
+                <allValuesFrom rdf:resource="&hssn;Variables"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <skos:definition>A Service represents entities capable of providing some value (or a set of values) relative to a given domain.</skos:definition>
+        <rdfs:comment>A Service represents entities capable of providing some value (or a set of values) relative to a given domain.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#ServiceInteractionInterface -->
+
+    <Class rdf:about="&hssn;ServiceInteractionInterface">
+        <rdfs:label>ServiceInteractionInterface</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Interface"/>
+        <rdfs:comment>A ServiceInteractionInterface is used to connect a Service to other Services for composite Service orchestration.</rdfs:comment>
+        <skos:definition>A ServiceInteractionInterface is used to connect a Service to other Services for composite Service orchestration.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Software -->
+
+    <Class rdf:about="&hssn;Software">
+        <rdfs:label>Software</rdfs:label>
+        <rdfs:comment>The set of all operating systems, applications and programs running on a Device.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#SpaceType -->
+
+    <Class rdf:about="&hssn;SpaceType">
+        <rdfs:label>SpaceType</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Visualisation"/>
+        <rdfs:comment>The specifies the space where the representation/visualisation occurs</rdfs:comment>
+        <skos:definition>The specifies the space where the representation/visualisation occurs</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#SpatialContext -->
+
+    <Class rdf:about="&hssn;SpatialContext">
+        <rdfs:label>SpatialContext</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Context"/>
+        <skos:example>Indoor, Outdoor...</skos:example>
+        <skos:definition>Contextual spatial information of a component</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#State-based -->
+
+    <Class rdf:about="&hssn;State-based">
+        <rdfs:label>State-based</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Context"/>
+        <skos:definition>Contextual information describing the state of a component</skos:definition>
+        <skos:example>Moving, Static, Functional, Broken Down...</skos:example>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#StaticDevice -->
+
+    <Class rdf:about="&hssn;StaticDevice">
+        <rdfs:label>StaticDevice</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Device"/>
+        <rdfs:comment>A Static Device is a device that does not move, or change position after its deployment.</rdfs:comment>
+        <skos:definition>A Static Device is a device that does not move, or change position after its deployment.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#TemporalContext -->
+
+    <Class rdf:about="&hssn;TemporalContext">
+        <rdfs:label>TemporalContext</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Context"/>
+        <skos:definition>Contextual temporal information of a component</skos:definition>
+        <skos:example>Obsolete, Old, Fresh, Incoming, Future...</skos:example>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Textual -->
+
+    <Class rdf:about="&hssn;Textual">
+        <rdfs:label>Textual</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;ScalarValue"/>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#TextualDescription -->
+
+    <Class rdf:about="&hssn;TextualDescription">
+        <rdfs:label>TextualDescription</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Metadata"/>
+        <skos:definition>A textual description (paragraph) of a component</skos:definition>
+        <rdfs:comment>A textual description (paragraph) of a component</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Title -->
+
+    <Class rdf:about="&hssn;Title">
+        <rdfs:label>Title</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Metadata"/>
+        <rdfs:comment>The label or title to be displayed</rdfs:comment>
+        <skos:definition>The label or title to be displayed</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#UserGoal -->
+
+    <Class rdf:about="&hssn;UserGoal">
+        <rdfs:label>UserGoal</rdfs:label>
+        <skos:definition>Goals describe user desires. They provide the means to specify the requester-side objectives. They describe at a high level the concrete task that is required / expected.</skos:definition>
+        <rdfs:comment>Goals describe user desires. They provide the means to specify the requester-side objectives. They describe at a high level the concrete task that is required / expected.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#UserInteractionInterface -->
+
+    <Class rdf:about="&hssn;UserInteractionInterface">
+        <rdfs:label>UserInteractionInterface</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;Interface"/>
+        <skos:definition>The UserInteractionInterface is used by users who request services to allow them the exchange of requests / information / variables with a service.</skos:definition>
+        <rdfs:comment>The UserInteractionInterface is used by users who request services to allow them the exchange of requests / information / variables with a service.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Variables -->
+
+    <Class rdf:about="&hssn;Variables">
+        <rdfs:label>Variables</rdfs:label>
+        <skos:definition>Variables represent the variables that are used / generated by a service.</skos:definition>
+        <rdfs:comment>Variables represent the variables that are used / generated by a service.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#VerticalAngle -->
+
+    <Class rdf:about="&hssn;VerticalAngle">
+        <rdfs:label>VerticalAngle</rdfs:label>
+        <equivalentClass rdf:resource="&hssn;VerticalSensingAngle"/>
+        <rdfs:subClassOf rdf:resource="&ssn;systems/SystemProperty"/>
+        <rdfs:comment>VerticalAngle defines the trigonometric vertical spread of a system&apos;s capability</rdfs:comment>
+        <skos:example>A temperature sensor has a 360° vertical and horizontal angles, i.e., can sense temperature in any given direction.
+
+While a tele-surveillance camera might have an horizontal spread over a 45° angle and a vertical spread over a 30° angle. Any object outside the spread of these angles is not sensed by the camera lens.</skos:example>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#VerticalSensingAngle -->
+
+    <Class rdf:about="&hssn;VerticalSensingAngle">
+        <rdfs:label>VerticalSensingAngle</rdfs:label>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;verticalSpreadDefines"/>
+                <onClass rdf:resource="&hssn;CoverageArea"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The maximal vertical sensing angle provided by the sensor.</rdfs:comment>
+        <skos:example>For example a temperature, humidity, noise, etc. sensor has a vertical and horizontal sensing angles are 360°. This changes the geometry of the CovergaeArea to a circle.
+In other cases, e.g., static video surveillance cameras the vertical and horizontal sensing angles differ from one camera to another: e.g., 30°, 45°,  60°, etc. This changes the geometry of the CoverageArea to a sector in space.</skos:example>
+    </Class>
+    
+
+
+    <!-- http://spider.sigappfr.org/HSSNdoc/hssn.ttl#Visualisation -->
+
+    <Class rdf:about="&hssn;Visualisation">
+        <rdfs:label>Visualisation</rdfs:label>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;visualises"/>
+                <cardinality rdf:datatype="&xsd;nonNegativeInteger">1</cardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;affectedBy"/>
+                <onClass rdf:resource="&hssn;Context"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Set of elements that assign visual elements to components</rdfs:comment>
+        <skos:definition>Set of elements that assign visual elements to components</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2021/5/gradys#Resource -->
+
+    <Class rdf:about="http://www.semanticweb.org/ontologies/2021/5/gradys#Resource"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#AverageWeatherValue -->
+
+    <Class rdf:about="&rdfs;AverageWeatherValue">
+        <rdfs:label>AverageWeatherValue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;ScalarValue"/>
+        <skos:definition>A scalar value estimated by the virtual sensor due to the act of collision</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Blizzard -->
+
+    <Class rdf:about="&rdfs;Blizzard">
+        <rdfs:subClassOf rdf:resource="&rdfs;WinterStorm"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#BlowingSnow -->
+
+    <Class rdf:about="&rdfs;BlowingSnow">
+        <rdfs:subClassOf rdf:resource="&rdfs;VisionObstruction"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Cloudy -->
+
+    <Class rdf:about="&rdfs;Cloudy">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherState"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Collision -->
+
+    <Class rdf:about="&rdfs;Collision">
+        <rdfs:label>Collision</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ssn;Stimulus"/>
+        <terms:description>Has three phases; onCollisionStart, onCollisionStay, and onCollisionEnd</terms:description>
+        <skos:definition>The act of weather measurements and virtual sensors colliding </skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Coverage -->
+
+    <Class rdf:about="&rdfs;Coverage">
+        <rdfs:label>Coverage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&rdfs;VirtualScalarProperty"/>
+        <skos:definition>Diameter size of the spherical weather measurement</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Dissipation -->
+
+    <Class rdf:about="&rdfs;Dissipation">
+        <rdfs:label>Dissipation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&rdfs;VirtualScalarProperty"/>
+        <skos:definition>Dissipation (%) from the center of the spherical weather measurement</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Drizzle -->
+
+    <Class rdf:about="&rdfs;Drizzle">
+        <rdfs:subClassOf rdf:resource="&rdfs;LiquidPrecipitation"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Dust -->
+
+    <Class rdf:about="&rdfs;Dust">
+        <rdfs:label>Dust</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherMeasurement"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#DustStorm -->
+
+    <Class rdf:about="&rdfs;DustStorm">
+        <rdfs:subClassOf rdf:resource="&rdfs;VisionObstruction"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#EstimatingWeatherValueOfCollisionArea -->
+
+    <Class rdf:about="&rdfs;EstimatingWeatherValueOfCollisionArea">
+        <rdfs:label>EstimatingWeatherValueOfCollsionArea</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sosa;Procedure"/>
+        <skos:definition>Procedure followed by the virtual sensor to estimate the average weather value </skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Fire -->
+
+    <Class rdf:about="&rdfs;Fire">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherEvent"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Fog -->
+
+    <Class rdf:about="&rdfs;Fog">
+        <rdfs:subClassOf rdf:resource="&rdfs;VisionObstruction"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#FreezingDrizzle -->
+
+    <Class rdf:about="&rdfs;FreezingDrizzle">
+        <rdfs:subClassOf rdf:resource="&rdfs;FreezingPrecipitation"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#FreezingPrecipitation -->
+
+    <Class rdf:about="&rdfs;FreezingPrecipitation">
+        <rdfs:subClassOf rdf:resource="&rdfs;Precipitation"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#FreezingRain -->
+
+    <Class rdf:about="&rdfs;FreezingRain">
+        <rdfs:subClassOf rdf:resource="&rdfs;FreezingPrecipitation"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#FrozenPrecipitation -->
+
+    <Class rdf:about="&rdfs;FrozenPrecipitation">
+        <rdfs:subClassOf rdf:resource="&rdfs;Precipitation"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#GroundBlizzard -->
+
+    <Class rdf:about="&rdfs;GroundBlizzard">
+        <rdfs:subClassOf rdf:resource="&rdfs;Blizzard"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Hail -->
+
+    <Class rdf:about="&rdfs;Hail">
+        <rdfs:subClassOf rdf:resource="&rdfs;FrozenPrecipitation"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Haze -->
+
+    <Class rdf:about="&rdfs;Haze">
+        <rdfs:subClassOf rdf:resource="&rdfs;VisionObstruction"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#HeatWave -->
+
+    <Class rdf:about="&rdfs;HeatWave">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherEvent"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Humidity -->
+
+    <Class rdf:about="&rdfs;Humidity">
+        <rdfs:label>Humidity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherMeasurement"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#IcePellets -->
+
+    <Class rdf:about="&rdfs;IcePellets">
+        <rdfs:subClassOf rdf:resource="&rdfs;FrozenPrecipitation"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#IceStrom -->
+
+    <Class rdf:about="&rdfs;IceStrom">
+        <rdfs:subClassOf rdf:resource="&rdfs;WinterStorm"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#LakeEffect -->
+
+    <Class rdf:about="&rdfs;LakeEffect">
+        <rdfs:subClassOf rdf:resource="&rdfs;WinterStorm"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#LiquidPrecipitation -->
+
+    <Class rdf:about="&rdfs;LiquidPrecipitation">
+        <rdfs:subClassOf rdf:resource="&rdfs;Precipitation"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#LocationOfWeatherMeasurement -->
+
+    <Class rdf:about="&rdfs;LocationOfWeatherMeasurement">
+        <rdfs:label>LocationOfWeatherMeasurement</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&rdfs;VirtualScalarProperty"/>
+        <skos:definition>Location of the spherical weather measurement&apos;s center</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Multi-sensor -->
+
+    <Class rdf:about="&rdfs;Multi-sensor">
+        <rdfs:label>Multi-sensor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ssn;System"/>
+        <skos:definition>Group of real physical sensors</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#PartlyCloudy -->
+
+    <Class rdf:about="&rdfs;PartlyCloudy">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherState"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Precipitation -->
+
+    <Class rdf:about="&rdfs;Precipitation">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherEvent"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Rain -->
+
+    <Class rdf:about="&rdfs;Rain">
+        <rdfs:subClassOf rdf:resource="&rdfs;LiquidPrecipitation"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Rainy -->
+
+    <Class rdf:about="&rdfs;Rainy">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherState"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#SamplingTime -->
+
+    <Class rdf:about="&rdfs;SamplingTime">
+        <rdfs:label>SamplingTime</rdfs:label>
+        <skos:definition>How often the virtual sensor measures/senses (i.e. frequency)</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#SensorAccuracy -->
+
+    <Class rdf:about="&rdfs;SensorAccuracy">
+        <rdfs:label>SensorAccuracy</rdfs:label>
+        <skos:definition>How accuracte is the virtual sensor&apos;s measurement </skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Smoke -->
+
+    <Class rdf:about="&rdfs;Smoke">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherEvent"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Snow -->
+
+    <Class rdf:about="&rdfs;Snow">
+        <rdfs:subClassOf rdf:resource="&rdfs;FrozenPrecipitation"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#SnowPellets -->
+
+    <Class rdf:about="&rdfs;SnowPellets">
+        <rdfs:subClassOf rdf:resource="&rdfs;FrozenPrecipitation"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#SnowSquail -->
+
+    <Class rdf:about="&rdfs;SnowSquail">
+        <rdfs:subClassOf rdf:resource="&rdfs;WinterStorm"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Snowy -->
+
+    <Class rdf:about="&rdfs;Snowy">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherState"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Sunny -->
+
+    <Class rdf:about="&rdfs;Sunny">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherState"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#SurfaceWind -->
+
+    <Class rdf:about="&rdfs;SurfaceWind">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherEvent"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Temperature -->
+
+    <Class rdf:about="&rdfs;Temperature">
+        <rdfs:label>Temperature</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherMeasurement"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Tornado -->
+
+    <Class rdf:about="&rdfs;Tornado">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherEvent"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Unity3D -->
+
+    <Class rdf:about="&rdfs;Unity3D">
+        <rdfs:label>Unity3D</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sosa;Platform"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&sosa;hosts"/>
+                <someValuesFrom rdf:resource="&rdfs;VirtualSensor"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&sosa;hosts"/>
+                <someValuesFrom rdf:resource="&rdfs;VirtualMulti-sensor"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <skos:definition>Virtual World Platform</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Value -->
+
+    <Class rdf:about="&rdfs;Value">
+        <rdfs:label>Value</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&rdfs;VirtualScalarProperty"/>
+        <skos:definition>Weather value at the center of the spherical weather measurement</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#VirtualMulti-sensor -->
+
+    <Class rdf:about="&rdfs;VirtualMulti-sensor">
+        <rdfs:label>VirtualMulti-Sensor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ssn;System"/>
+        <skos:definition>Group of virtual sensors </skos:definition>
+        <terms:description>Can be composed of upto 4 unique virtual sensors (temperature, wind, humidity, dust)</terms:description>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#VirtualScalarProperty -->
+
+    <Class rdf:about="&rdfs;VirtualScalarProperty">
+        <rdfs:label>VirtualScalarProperty</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hssn;ScalarProperty"/>
+        <skos:definition>Properties of the virtual sensor&apos;s feature of interest; Weather Measurements</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#VirtualSensor -->
+
+    <Class rdf:about="&rdfs;VirtualSensor">
+        <rdfs:label>VirtualSensor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ssn;System"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;currentlyCoversA"/>
+                <onClass rdf:resource="&hssn;CoverageArea"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&ssn;detects"/>
+                <allValuesFrom rdf:resource="&rdfs;Collision"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&sosa;observes"/>
+                <allValuesFrom rdf:resource="&rdfs;VirtualScalarProperty"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&rdfs;isPartOf"/>
+                <onClass rdf:resource="&rdfs;VirtualMulti-sensor"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&rdfs;hasAccuracy"/>
+                <onClass rdf:resource="&rdfs;SensorAccuracy"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&rdfs;isAvatarOf"/>
+                <allValuesFrom rdf:resource="&sosa;Sensor"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;senses"/>
+                <someValuesFrom rdf:resource="&rdfs;VirtualScalarProperty"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&sosa;madeObservation"/>
+                <allValuesFrom rdf:resource="&rdfs;WeatherValueOfContactPoints"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasPastCoverageArea"/>
+                <someValuesFrom rdf:resource="&hssn;CoverageArea"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&rdfs;hasSamplingTime"/>
+                <onClass rdf:resource="&rdfs;SamplingTime"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <skos:definition>Virtual sensor in Unity3D</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#VirtualWeatherMeasurement -->
+
+    <Class rdf:about="&rdfs;VirtualWeatherMeasurement">
+        <rdfs:label>VirtualWeatherMeasurement</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sosa;FeatureOfInterest"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&rdfs;isAvatarOf"/>
+                <allValuesFrom rdf:resource="&rdfs;WeatherMeasurement"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <skos:definition>Virtual avatar of the real physical Weather Measurement </skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#VisionObstruction -->
+
+    <Class rdf:about="&rdfs;VisionObstruction">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherEvent"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#WaterSprout -->
+
+    <Class rdf:about="&rdfs;WaterSprout">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherEvent"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Weather -->
+
+    <Class rdf:about="&rdfs;Weather">
+        <rdfs:label>Weather</rdfs:label>
+        <skos:definition>Representative of all weather phenomena</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#WeatherAPI -->
+
+    <Class rdf:about="&rdfs;WeatherAPI">
+        <rdfs:label>WeatherAPI</rdfs:label>
+        <skos:definition>API to receive regualry the current weather of the city of simulation</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#WeatherEvent -->
+
+    <Class rdf:about="&rdfs;WeatherEvent">
+        <rdfs:label>WeatherEvent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&rdfs;Weather"/>
+        <skos:definition>Representative of simple or complex weather events </skos:definition>
+        <skos:example>Simple: Rain, Drizzle, Fire
+Complex: WinterStorm, VisionObstruction</skos:example>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#WeatherMeasurement -->
+
+    <Class rdf:about="&rdfs;WeatherMeasurement">
+        <rdfs:label>WeatherMeasurement</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sosa;FeatureOfInterest"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&rdfs;isPartOf"/>
+                <allValuesFrom rdf:resource="&rdfs;Weather"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <skos:definition>What the virtual sensor can sense/detect</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#WeatherState -->
+
+    <Class rdf:about="&rdfs;WeatherState">
+        <rdfs:label>WeatherState</rdfs:label>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&rdfs;isPartOf"/>
+                <allValuesFrom rdf:resource="&rdfs;Weather"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <skos:example>Sunny, cloudy, parlty cloudy, snowy, rainy, windy</skos:example>
+        <skos:definition>Weather state/atmosphere of the city of simulation</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#WeatherValueOfContactPoints -->
+
+    <Class rdf:about="&rdfs;WeatherValueOfContactPoints">
+        <rdfs:label>WeatherValueOfContactPoints</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sosa;Observation"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&sosa;usedProcedure"/>
+                <allValuesFrom rdf:resource="&rdfs;EstimatingWeatherValueOfCollisionArea"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&rdfs;hasAverageValue"/>
+                <onClass rdf:resource="&rdfs;AverageWeatherValue"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <skos:definition>Represensts the weather value at the points of interesction between the weather measurement and virtual sensor under collision </skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Wind -->
+
+    <Class rdf:about="&rdfs;Wind">
+        <rdfs:label>Wind</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherMeasurement"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Windy -->
+
+    <Class rdf:about="&rdfs;Windy">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherState"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#WinterStorm -->
+
+    <Class rdf:about="&rdfs;WinterStorm">
+        <rdfs:subClassOf rdf:resource="&rdfs;WeatherEvent"/>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <rdf:Description rdf:about="&owl;Thing">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasContext"/>
+                <onClass rdf:resource="&hssn;Context"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;visualisedBy"/>
+                <onClass rdf:resource="&hssn;Visualisation"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasPreviousVisualisation"/>
+                <someValuesFrom rdf:resource="&hssn;Visualisation"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasPreviousCiontext"/>
+                <someValuesFrom rdf:resource="&hssn;Context"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#DateTimeInterval -->
+
+    <Class rdf:about="http://www.w3.org/2006/time#DateTimeInterval">
+        <rdfs:label xml:lang="en">Date-timeInterval</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <skos:note xml:lang="en">:DateTimeInterval can only be used for an interval whose limits coincide with a date-time element aligned to the calendar and timezone indicated. For example, while both have a duration of one day, the 24-hour interval beginning at midnight at the beginning of 8 May in Central Europe can be expressed as a :DateTimeInterval, but the 24-hour interval starting at 1:30pm cannot.</skos:note>
+        <rdfs:comment xml:lang="en">DateTimeInterval is a subclass of ProperInterval, defined using the multi-element DateTimeDescription.</rdfs:comment>
+        <skos:definition xml:lang="en">DateTimeInterval is a subclass of ProperInterval, defined using the multi-element DateTimeDescription.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+    <Class rdf:about="http://www.w3.org/2006/time#Instant">
+        <rdfs:label xml:lang="en">TimeInstant</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <disjointWith rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:comment xml:lang="en">A temporal entity with zero extent or duration</rdfs:comment>
+        <skos:definition xml:lang="en">A temporal entity with zero extent or duration</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Interval -->
+
+    <Class rdf:about="http://www.w3.org/2006/time#Interval">
+        <rdfs:label xml:lang="en">TimeInterval</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.w3.org/2006/time#inside"/>
+                <someValuesFrom rdf:resource="http://www.w3.org/2006/time#Instant"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <skos:definition xml:lang="en">A temporal entity with an extent or duration</skos:definition>
+        <rdfs:comment xml:lang="en">A temporal entity with an extent or duration</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#ProperInterval -->
+
+    <Class rdf:about="http://www.w3.org/2006/time#ProperInterval">
+        <rdfs:label xml:lang="en">ProperInterval</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Interval"/>
+        <rdfs:comment xml:lang="en">A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different</rdfs:comment>
+        <skos:definition xml:lang="en">A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TRS -->
+
+    <Class rdf:about="http://www.w3.org/2006/time#TRS">
+        <rdfs:label xml:lang="en">TemporalReferenceSystem</rdfs:label>
+        <skos:note xml:lang="en">A taxonomy of temporal reference systems is provided in ISO 19108:2002 [ISO19108], including (a) calendar + clock systems; (b) temporal coordinate systems (i.e. numeric offset from an epoch); (c) temporal ordinal reference systems (i.e. ordered sequence of named intervals, not necessarily of equal duration).</skos:note>
+        <rdfs:comment xml:lang="en">A temporal reference system, such as a temporal coordinate system (with an origin, direction, and scale), a calendar-clock combination, or a (possibly hierarchical) ordinal system. 
+
+This is a stub class, representing the set of all temporal reference systems.</rdfs:comment>
+        <skos:definition xml:lang="en">A temporal reference system, such as a temporal coordinate system (with an origin, direction, and scale), a calendar-clock combination, or a (possibly hierarchical) ordinal system. 
+
+This is a stub class, representing the set of all temporal reference systems.</skos:definition>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TemporalEntity -->
+
+    <Class rdf:about="http://www.w3.org/2006/time#TemporalEntity">
+        <rdfs:label>TemporalEntity</rdfs:label>
+        <equivalentClass>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+                </unionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/FeatureOfInterest -->
+
+    <Class rdf:about="&sosa;FeatureOfInterest"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/ObservableProperty -->
+
+    <Class rdf:about="&sosa;ObservableProperty"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Observation -->
+
+    <Class rdf:about="&sosa;Observation"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Platform -->
+
+    <Class rdf:about="&sosa;Platform"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Procedure -->
+
+    <Class rdf:about="&sosa;Procedure">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&ssn;hasOutput"/>
+                <allValuesFrom rdf:resource="&ssn;Output"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Result -->
+
+    <Class rdf:about="&sosa;Result"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sensor -->
+
+    <rdf:Description rdf:about="&sosa;Sensor">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;hasPastCoverageArea"/>
+                <someValuesFrom rdf:resource="&hssn;CoverageArea"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;mediaSenses"/>
+                <someValuesFrom rdf:resource="&hssn;MultimediaProperty"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;currentlyCoversA"/>
+                <onClass rdf:resource="&hssn;CoverageArea"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&rdfs;isPartOf"/>
+                <onClass rdf:resource="&rdfs;Multi-sensor"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;senses"/>
+                <someValuesFrom rdf:resource="&hssn;ScalarProperty"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/Output -->
+
+    <Class rdf:about="&ssn;Output"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/Stimulus -->
+
+    <Class rdf:about="&ssn;Stimulus"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/System -->
+
+    <rdf:Description rdf:about="&ssn;System">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&hssn;embeddedOn"/>
+                <someValuesFrom rdf:resource="&hssn;ExpansionCard"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&mssn;Location">
+        <rdfs:label>Location</rdfs:label>
+        <skos:definition>Locations are the essential component of a Location Map. Each location can be viewed as a set of points in space that form a random or geometrical shape.</skos:definition>
+        <rdfs:comment>Locations are the essential component of a Location Map. Each location can be viewed as a set of points in space that form a random or geometrical shape.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="&mssn;LocationMap">
+        <rdfs:label>LocationMap</rdfs:label>
+        <rdfs:comment>A location map describes the spatial element of an infrastructure. 
+It is composed of a set of locations that are connected via spatial relations (topological, directional, distance...). 
+The entire set of locations and inter-location relations constitute the map of an infrastructure.</rdfs:comment>
+        <skos:definition>A location map describes the spatial element of an infrastructure. 
+It is composed of a set of locations that are connected via spatial relations (topological, directional, distance...). 
+The entire set of locations and inter-location relations constitute the map of an infrastructure.</skos:definition>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
