@@ -1,0 +1,56 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX gradys: <http://www.semanticweb.org/ontologies/2021/5/gradys#> 
+
+
+SELECT ?data ?content 
+where {?data gradys:hasContent ?content .
+?content gradys:hasContentMetaData ?meta.
+?meta gradys:Metadatatext "Metadatatext90"^^xsd:string}
+
+--------------------------------
+
+PREFIX gradys: <http://www.semanticweb.org/ontologies/2021/5/gradys#>
+PREFIX hssn: <http://spider.sigappfr.org/HSSNdoc/hssn.ttl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT
+  (GROUP_CONCAT(DISTINCT STR(?data); separator=", ") AS ?dataList)
+  (GROUP_CONCAT(DISTINCT STR(?service); separator=", ") AS ?serviceList)
+WHERE {
+  ?data rdf:type gradys:Data .
+  ?data gradys:Exposed_by ?dev1 .
+  ?dev1 hssn:currentlyLocatedAt ?loc1 .
+  ?loc1 gradys:Location_id ?locId1 .
+  FILTER(REGEX(STR(?locId1), "zone 1", "i"))
+
+  ?data gradys:hasContent ?content .
+  ?content gradys:hasContentMetaData ?meta .
+  ?meta gradys:Metadatatext ?metaText .
+  FILTER(REGEX(STR(?metaText), "weather", "i"))
+
+  ?service rdf:type gradys:Service .
+  ?service gradys:Exposed_by ?dev2 .
+  ?dev2 hssn:currentlyLocatedAt ?loc2 .
+  ?loc2 gradys:Location_id ?locId2 .
+  FILTER(REGEX(STR(?locId2), "zone 1", "i"))
+
+  ?service gradys:Offers ?operation .
+  ?operation gradys:Function ?functionText .
+  FILTER(REGEX(STR(?functionText), "collect temperature", "i"))
+}
+
+
+---------------------------------------
+
+SELECT DISTINCT ?represented_resource
+WHERE {
+  ?res rdf:type gradys:Resource .
+  ?res gradys:hasType ?composite .
+  ?composite rdf:type gradys:CompositeResource .
+  ?res gradys:Has_Workflow ?wf .
+  ?wf gradys:Has_Component ?component .
+  ?component gradys:Represents ?represented_resource .
+}
