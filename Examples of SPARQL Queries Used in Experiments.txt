@@ -5,10 +5,13 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX gradys: <http://www.semanticweb.org/ontologies/2021/5/gradys#> 
 
 
-SELECT ?data ?content 
-where {?data gradys:hasContent ?content .
-?content gradys:hasContentMetaData ?meta.
-?meta gradys:Metadatatext "Metadatatext90"^^xsd:string}
+SELECT ?data ?content
+WHERE {
+  ?data gradys:hasContent ?content .
+  ?content gradys:hasContentMetaData ?meta .
+  ?meta gradys:Metadatatext ?mt .
+  FILTER(STR(?mt) = "Metadatatext90")
+}
 
 --------------------------------
 
@@ -45,6 +48,12 @@ WHERE {
 
 ---------------------------------------
 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX gradys: <http://www.semanticweb.org/ontologies/2021/5/gradys#> 
+
 SELECT DISTINCT ?represented_resource
 WHERE {
   ?res rdf:type gradys:Resource .
@@ -54,3 +63,5 @@ WHERE {
   ?wf gradys:Has_Component ?component .
   ?component gradys:Represents ?represented_resource .
 }
+
+
